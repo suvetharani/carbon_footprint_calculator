@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f0f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    padding: 1em;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  h1 {
+    color: #1a73e8;
+    text-align: center;
+  }
+  
+  form {
+    background: #fff;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ccc;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  label {
+    display: block;
+    margin-top: 1em;
+  }
+  
+  input, select {
+    width: 100%;
+    padding: 0.5em;
+    margin-top: 0.2em;
+    box-sizing: border-box;
+  }
+  
+  button {
+    margin-top: 1em;
+    padding: 0.5em 1em;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  .result {
+    margin-top: 2em;
+    font-size: 1.2em;
+    text-align: center;
+    color: #333;
+  }
+  
+  @media (max-width: 600px) {
+    form {
+      padding: 0.8em;
+    }
+  
+    button {
+      padding: 0.6em;
+    }
+  }
+  

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Carbon Footprint AI</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+  <h1>Carbon Footprint Calculator</h1>
+
+  <form id="carbonForm">
+    <label for="heating-source">Heating Energy Source:</label>
+    <select name="Heating Energy Source" id="heating-source" required>
+      <option value="wood">Wood</option>
+      <option value="Natural Gas">Natural Gas</option>
+      <option value="Other">Other</option>
+    </select><br>
+
+    <label for="transport">Transport:</label>
+    <select name="Transport" id="transport" required>
+        <option value="private">private</option>
+        <option value="walk/bicycle">walk/bicycle</option>
+        <option value="None">None</option>
+    </select><br>
+
+
+    <label for="vehicle-type">Transport Vehicle Type:</label>
+    <select name="Vehicle Type" id="vehicle-type" required>
+      <option value="petrol">petrol</option>
+      <option value="electric">electric</option>
+      <option value="None">None</option>
+    </select><br>
+
+    <label for="grocery-bill">Monthly Grocery Bill (in $):</label>
+    <input type="number" id="grocery-bill" name="Monthly Grocery Bill" required min="0"><br>
+
+    <label for="vehicle-distance">Vehicle Monthly Distance (km):</label>
+    <input type="number" id="vehicle-distance" name="Vehicle Monthly Distance km" required min="0"><br>
+
+    <label for="waste-bags">Waste Bag Weekly Count:</label>
+    <input type="number" id="waste-bags" name="Waste Bag Weekly Count" required min="0"><br>
+
+    <label for="tv-hours">TV/PC Daily Hours:</label>
+    <input type="number" id="tv-hours" name="How Long TV PC Daily Hour" required min="0"><br>
+
+    <label for="new-clothes">New Clothes Monthly:</label>
+    <input type="number" id="new-clothes" name="How Many New Clothes Monthly" required min="0"><br>
+
+    <label for="internet-hours">Internet Daily Hours:</label>
+    <input type="number" id="internet-hours" name="How Long Internet Daily Hour" required min="0"><br>
+
+    <button type="submit">submit</button>
+
+  </form>
+  </div>
+
+  <div class="result" id="result"></div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
