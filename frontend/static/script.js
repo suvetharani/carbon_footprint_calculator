@@ -22,8 +22,47 @@ document.getElementById("carbonForm").addEventListener("submit", function (e) {
           return res.json();
         })
         .then((data) => {
-          document.getElementById("result").innerText =
-            `Predicted Carbon Emissions: ${data.total_emissions} kg CO₂`;
+          let chart;
+          const chartElement = document.getElementById("carbonChart");
+
+          if (chart) chart.destroy();
+
+          const labels = Object.keys(data.contributions);
+          const values = Object.values(data.contributions);
+
+          if (window.carbonChartInstance) {
+            window.carbonChartInstance.destroy();
+          }
+
+          window.carbonChartInstance = new Chart(chartElement, {
+            type: "pie",
+            data: {
+              labels: labels,
+              datasets: [{
+                label: "Carbon Contribution (kg CO₂)",
+                data: values,
+                backgroundColor: [
+                  "#f94144", "#f3722c", "#f8961e", "#f9844a",
+                  "#f9c74f", "#90be6d", "#43aa8b", "#577590", "#277da1"
+                ],
+              }]
+            },
+            options: {
+              responsive: true,
+              plugins: {
+                legend: { position: 'bottom' },
+                tooltip: {
+                  callbacks: {
+                    label: (context) => {
+                      const label = context.label || '';
+                      const value = context.raw || 0;
+                      return `${label}: ${value.toFixed(2)} kg CO₂`;
+                    }
+                  }
+                }
+              }
+            }
+          });
         })
         .catch((err) => {
           console.error(err);
