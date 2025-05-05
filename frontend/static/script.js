@@ -48,7 +48,8 @@ document.getElementById("carbonForm").addEventListener("submit", function (e) {
               }]
             },
             options: {
-              responsive: true,
+              responsive: false,
+              maintainAspectRatio: false,
               plugins: {
                 legend: { position: 'bottom' },
                 tooltip: {
@@ -62,6 +63,7 @@ document.getElementById("carbonForm").addEventListener("submit", function (e) {
                 }
               }
             }
+            
           });
         })
         .catch((err) => {

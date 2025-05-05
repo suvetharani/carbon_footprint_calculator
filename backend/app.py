@@ -7,7 +7,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_DIR = os.path.join(BASE_DIR, "../model")
 FRONTEND_DIR = os.path.join(BASE_DIR, "../frontend")
-STATIC_DIR = os.path.join(FRONTEND_DIR, "static")
+STATIC_DIR = os.path.join(FRONTEND_DIR, "../frontend/static")
 
 # Initialize Flask app
 app = Flask(__name__, static_folder=STATIC_DIR)
